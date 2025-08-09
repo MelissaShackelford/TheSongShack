@@ -1,298 +1,501 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" id="top">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SongShackOnTheGo.com</title>
-  <meta name="description" content="Write lyrics, spark ideas, and book vocal coaching — on the go." />
-  <style>
-:root{
-  --bg:#0a0f1a; --bg2:#0e1424; --text:#eef2ff; --muted:#aab1c9;
-  --gold:#ffcc66; --card:#121935; --border:#263157;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-a{color:var(--gold);text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-.site-header{position:sticky;top:0;z-index:10;background:rgba(10,15,26,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-.nav{display:flex;align-items:center;gap:14px;height:66px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo img{height:40px;width:auto;border-radius:6px}
-.spacer{flex:1}
-.nav a{padding:6px 10px}
-.cta{padding:10px 14px;border-radius:10px;background:var(--gold);color:#0b0f1c;font-weight:700;border:0}
-
-.hero{position:relative;min-height:62vh;display:grid;place-items:center;background:#000}
-.hero::before{content:"";position:absolute;inset:0;background:url('assets/images/hero.jpg') center/cover no-repeat;filter:brightness(.55)}
-.hero-inner{position:relative;text-align:center;padding:40px 16px}
-.hero h1{font-size:clamp(28px,5vw,46px);margin:10px 0 8px}
-.hero p{font-size:clamp(16px,2.6vw,20px);color:var(--gold);margin:0 0 18px}
-
-.section{padding:72px 0}
-h2{font-size:2rem;margin:0 0 16px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
-.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.players{display:grid;gap:16px}
-.players .card h3{margin:0 0 8px}
-img.responsive{max-width:100%;height:auto;border-radius:14px;border:1px solid var(--border)}
-
-.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.badge{background:#18203e;border:1px solid var(--border);padding:6px 10px;border-radius:10px;color:#e6ebff;font-size:.9rem}
-
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;border:1px solid var(--border)}
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px}
-.lightbox img{max-width:92vw;max-height:86vh;border-radius:12px}
-
-.ai-box{display:grid;gap:12px}
-.controls{display:grid;gap:10px}
-.controls input,.controls textarea{width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0c1022;color:var(--text)}
-.canvas-wrap{background:#0c1022;border:1px solid var(--border);border-radius:12px;padding:10px;display:grid;place-items:center}
-
-.site-footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);text-align:center;margin-top:20px}
-
-@media (max-width: 980px){
-  .grid-2{grid-template-columns:1fr}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SongShackOnTheGo — The Song Shack</title>
+  <meta name="description" content="Empowering aspiring songwriters of all ages with coaching and AI-powered creative tools.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#top" class="logo">
-        <!-- use your logo file here if you prefer: assets/images/logo.png -->
-        <img src="assets/images/logo.png" alt="Song Shack logo" />
-        <strong>SongShackOnTheGo</strong>
-      </a>
-      <div class="spacer"></div>
+<header class="header">
+  <div class="container nav">
+    <a href="#top" class="brand">
+      <img src="assets/images/logo.png" alt="Song Shack logo">
+      <strong>SongShackOnTheGo</strong>
+    </a>
+    <div class="spacer"></div>
+    <nav>
       <a href="#music">Music</a>
+      <a href="#studio">AI Studio</a>
       <a href="#about">About</a>
       <a href="#coach">Coach</a>
       <a href="#gallery">Gallery</a>
-      <a href="#future">Future & AI</a>
-      <a href="#contact" class="cta">Book Coaching</a>
-    </div>
-  </header>
+      <a href="#ai">AI Tools</a>
+    </nav>
+    <a class="cta" href="mailto:missyshack4@gmail.com?subject=Book%20Coaching">Book Coaching</a>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-inner">
-      <img src="assets/images/logo.png" alt="" style="height:86px;opacity:.95;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));" />
-      <h1>Empowering aspiring songwriters of all ages.</h1>
-      <p>A sanctuary to create and grow.</p>
-      <a class="cta" href="mailto:missyshack4@gmail.com?subject=Book%20Coaching">BOOK COACHING</a>
+<section class="hero">
+  <div>
+    <img class="hero-logo" src="assets/images/logo.png" alt="">
+    <h1>Empowering aspiring songwriters of all ages.</h1>
+    <p class="tag">AI that assists — you create.</p>
+    <a class="cta" href="#studio">Open AI Songwriting Studio</a>
+  </div>
+</section>
+
+<main class="container">
+  <!-- MUSIC -->
+  <section class="section" id="music">
+    <h2>Featured Tracks</h2>
+    <div class="card">
+      <strong>Hook, Line and Time</strong>
+      <audio controls preload="metadata" style="width:100%">
+        <source src="assets/audio/HookLineandTime.m4a" type="audio/mp4">
+      </audio>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <strong>Talk Nice (Edit)</strong>
+      <audio controls preload="metadata" style="width:100%">
+        <source src="assets/audio/TalkNiceEdit.mp3" type="audio/mpeg">
+      </audio>
     </div>
   </section>
 
-  <main class="container">
+  <!-- AI SONGWRITING STUDIO -->
+  <section class="section" id="studio">
+    <h2>AI Songwriting Studio</h2>
+    <p class="muted small">Your creative space: brainstorm lyrics, try chords, record ideas, and design cover art — all in your browser.</p>
 
-    <!-- MUSIC -->
-    <section class="section" id="music">
-      <h2>Featured Tracks</h2>
-      <div class="players">
-        <div class="card">
-          <h3>Hook, Line and Time</h3>
-          <audio controls preload="metadata" style="width:100%">
-            <!-- put file in assets/audio/HookLineandTime.m4a (no spaces) -->
-            <source src="assets/audio/HookLineandTime.m4a" type="audio/mp4">
-            Your browser doesn’t support the audio element.
-          </audio>
+    <div class="studio-grid">
+      <!-- LEFT: LYRIC TOOLS -->
+      <div class="card">
+        <h3>Song Starter</h3>
+        <div class="ai-grid">
+          <label>Topic / Concept <input id="aiTopic" placeholder="e.g., long-distance love, summer nights"></label>
+          <label>Mood <input id="aiMood" placeholder="e.g., hopeful, bittersweet, confident"></label>
+          <label>Genre <input id="aiGenre" placeholder="e.g., pop, country, indie, hip-hop"></label>
+          <label>Perspective
+            <select id="aiPOV"><option>I / Me</option><option>You / Yours</option><option>We / Us</option><option>3rd Person</option></select>
+          </label>
+          <label>Keywords (optional) <input id="aiKeywords" placeholder="comma-separated: skyline, vinyl, neon"></label>
         </div>
-
-        <div class="card">
-          <h3>Talk Nice (Edit)</h3>
-          <audio controls preload="metadata" style="width:100%">
-            <!-- rename to assets/audio/TalkNiceEdit.mp3 (avoid spaces) -->
-            <source src="assets/audio/TalkNiceEdit.mp3" type="audio/mpeg">
-            Your browser doesn’t support the audio element.
-          </audio>
+        <div class="row-buttons">
+          <button class="cta" id="aiGenerate">Generate Draft</button>
+          <button class="ghost" id="aiCopyAll">Copy All</button>
+          <button class="ghost" id="aiDownload">Download .txt</button>
         </div>
-      </div>
-    </section>
+        <div id="songOut" class="song-out"></div>
 
-    <!-- ABOUT MELISSA -->
-    <section class="section" id="about">
-      <h2>About Melissa Hinson</h2>
-      <div class="grid-2">
-        <div>
-          <div class="card">
-            <p>Melissa Hinson was born in Memphis, Tennessee and has been writing music and singing for over <strong>40 years</strong>. She’s spent more than <strong>30 years working with kids</strong>, helping them build confidence, learn vocal control, and discover their unique sound. At The Song Shack, she blends heart, experience, and a love of teaching to bring out the best in every student — from first‑time singers to seasoned performers.</p>
-            <div class="badges">
-              <span class="badge">Memphis roots</span>
-              <span class="badge">40+ years singing</span>
-              <span class="badge">30+ years with kids</span>
+        <div class="tools-split">
+          <div>
+            <h4>Rhyme Finder</h4>
+            <div class="row-inline">
+              <input id="rhymeWord" placeholder="word to rhyme"><button id="rhymeBtn" class="ghost">Find</button>
             </div>
+            <div id="rhymeOut" class="mini-out"></div>
           </div>
-        </div>
-        <div>
-          <img class="responsive" src="assets/images/melissa.jpg" alt="Melissa Hinson" />
-        </div>
-      </div>
-    </section>
-
-    <!-- COACH CODY -->
-    <section class="section" id="coach">
-      <h2>Coach — Cody Hall</h2>
-      <div class="grid-2">
-        <div>
-          <img class="responsive" src="assets/images/cody.jpg" alt="Coach Cody Hall" />
-        </div>
-        <div>
-          <div class="card">
-            <p><strong>15+ years</strong> of songwriting and <strong>10+ years</strong> working with kids. Cody coaches vocals, harmonies, ear training, and modern songwriting across pop, country, and hip‑hop — with a calm, collaborative approach that builds confidence.</p>
-            <div class="badges">
-              <span class="badge">Songwriting 15+ yrs</span>
-              <span class="badge">Working w/ kids 10+ yrs</span>
-              <span class="badge">Pop • Country • Hip‑Hop</span>
-            </div>
-            <p style="margin-top:16px"><a class="cta" href="mailto:missyshack4@gmail.com?subject=Book%20Coaching%20with%20Cody">Book Coaching →</a></p>
+          <div>
+            <h4>Lyric Polisher</h4>
+            <textarea id="polishIn" rows="3" placeholder="Paste a line you want tweaked"></textarea>
+            <button id="polishBtn" class="ghost">Suggest Rewrites</button>
+            <div id="polishOut" class="mini-out"></div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- GALLERY -->
-    <section class="section" id="gallery">
-      <h2>Gallery — The Song Shack</h2>
-      <p class="card" style="margin-bottom:16px">Students and sessions from The Song Shack — real progress, real performances.</p>
-      <div class="gallery" id="gal">
-        <!-- Drop your images into assets/images/ and update names below -->
-        <img src="assets/images/gallery1.jpg" alt="Gallery 1" />
-        <img src="assets/images/gallery2.jpg" alt="Gallery 2" />
-        <img src="assets/images/gallery3.jpg" alt="Gallery 3" />
-        <img src="assets/images/gallery4.jpg" alt="Gallery 4" />
-        <img src="assets/images/gallery5.jpg" alt="Gallery 5" />
-        <img src="assets/images/gallery6.jpg" alt="Gallery 6" />
-        <img src="assets/images/gallery7.jpg" alt="Gallery 7" />
-        <img src="assets/images/gallery8.jpg" alt="Gallery 8" />
-      </div>
-      <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-        <img id="lightboxImg" src="" alt="" />
-      </div>
-    </section>
-
-    <!-- FUTURE & AI -->
-    <section class="section" id="future">
-      <h2>Future &amp; AI — Moving Forward</h2>
-      <div class="grid-2">
-        <div class="card">
-          <p>The Song Shack is moving forward with new creative tools — including using AI to help spark lyric ideas, structure melodies, and mock up artwork. Kids and adults learn how to use modern tools responsibly to boost creativity, not replace it.</p>
-          <ul>
-            <li>Learn lyric brainstorming techniques with AI prompts</li>
-            <li>Explore structure &amp; hook writing</li>
-            <li>Mock up cover art quickly with our simple generator</li>
-          </ul>
+      <!-- RIGHT: MUSIC + RECORDING -->
+      <div class="card">
+        <h3>Chords • Melody • Recording</h3>
+        <div class="ai-grid">
+          <label>Vibe / Genre for Chords <input id="chordMood" placeholder="e.g., pop uplifting, moody R&B, country ballad"></label>
+          <button id="chordBtn" class="ghost">Suggest Chord Progressions</button>
+          <div id="chordOut" class="mini-out"></div>
+          <button id="melodyBtn" class="ghost">Give Melody Hints</button>
+          <div id="melodyOut" class="mini-out"></div>
         </div>
-        <div class="card ai-box">
-          <h3>Simple Cover Art Generator</h3>
+
+        <hr class="sep">
+
+        <h4>Record a Take</h4>
+        <p class="muted small">Browser mic recording (no login). Your audio never leaves your device until you download it.</p>
+        <div class="rec-controls">
+          <button id="recStart" class="cta">● Record</button>
+          <button id="recStop"  class="ghost" disabled>■ Stop</button>
+          <button id="recPlay"  class="ghost" disabled>▶ Play</button>
+          <a id="recDownload" class="ghost" style="display:none" download="songshack-take.webm">Download Take</a>
+        </div>
+        <audio id="recAudio" controls style="width:100%;display:none"></audio>
+
+        <details style="margin-top:10px">
+          <summary class="muted">Metronome (click)</summary>
+          <div class="row-inline">
+            <label>BPM <input type="number" id="bpm" value="90" min="40" max="220" style="width:100px"></label>
+            <button id="metroToggle" class="ghost">Start</button>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>Cover Art Generator</h3>
+      <div class="grid2">
+        <div>
           <div class="controls">
-            <label>Upload background image
-              <input type="file" id="bgUpload" accept="image/*">
-            </label>
-            <label>Title
-              <input type="text" id="titleInput" placeholder="Song Title">
-            </label>
-            <label>Artist
-              <input type="text" id="artistInput" placeholder="Artist Name">
-            </label>
+            <label>Upload background image <input type="file" id="bgUpload" accept="image/*"></label>
+            <label>Title <input type="text" id="titleInput" placeholder="Song Title"></label>
+            <label>Artist <input type="text" id="artistInput" placeholder="Artist Name"></label>
             <button class="cta" id="renderBtn">Render Cover</button>
             <a id="downloadLink" class="cta" download="cover-art.png" style="display:none;">Download PNG</a>
           </div>
-          <div class="canvas-wrap">
-            <canvas id="coverCanvas" width="900" height="900"></canvas>
-          </div>
         </div>
+        <div class="canvas-wrap"><canvas id="coverCanvas" width="900" height="900"></canvas></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <h2>Contact & Booking</h2>
-      <div class="grid-2">
-        <div class="card">
-          <p>Ready to start? Book a session with The Song Shack.</p>
-          <p><strong>Email:</strong> <a href="mailto:missyshack4@gmail.com">missyshack4@gmail.com</a></p>
-          <p><a class="cta" href="mailto:missyshack4@gmail.com?subject=Book%20Coaching">Book Coaching →</a></p>
-        </div>
-        <div class="card">
-          <label>Your Name<input type="text" placeholder="Your name"></label>
-          <label>Your Email<input type="email" placeholder="your@email.com"></label>
-          <label>Message<textarea rows="4" placeholder="Tell us about your goals…"></textarea></label>
-          <small style="color:var(--muted)">Form is a visual placeholder — click “Book Coaching” to email us.</small>
-        </div>
+  <!-- AI TOOLS (quick reference/mission) -->
+  <section class="section" id="ai">
+    <h2>AI at The Song Shack</h2>
+    <div class="card">
+      <h3>Mission Statement</h3>
+      <p><em>Our mission is to empower musicians of all ages with tools and confidence to tell their story. AI does not replace creativity — it amplifies it. Every lyric, melody, and image starts with your vision. AI is just a helper to bring that vision to life faster and clearer. You own your creations and can publish and profit from them — because AI is assisting, not authoring.</em></p>
+      <h4>How We Use AI</h4>
+      <ul>
+        <li>Brainstorm lyrics (titles, verses, hooks) and polish lines you already wrote.</li>
+        <li>Suggest chords, melody contours, and beat directions — you choose what sticks.</li>
+        <li>Mock up cover art and visuals to match your sound and mood.</li>
+      </ul>
+      <p class="muted small">Note: This site’s AI tools are lightweight, on-device helpers. They produce suggestions for you to edit. Final decisions, melodies, words, and performances are yours.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT / COACH / GALLERY kept as before -->
+  <section class="section" id="about">
+    <h2>About Melissa Hinson</h2>
+    <div class="grid2">
+      <div class="card">
+        Born in Memphis, Tennessee, Melissa has been writing music and singing for <b>40+ years</b> and working with kids for <b>30+ years</b>. At The Song Shack she blends heart, experience, and a love of teaching to bring out the best in every student.
       </div>
-    </section>
+      <div><img class="responsive" src="assets/images/melissa.jpg" alt="Melissa Hinson"></div>
+    </div>
+  </section>
 
-  </main>
+  <section class="section" id="coach">
+    <h2>Coach — Cody Hall</h2>
+    <div class="grid2">
+      <div><img class="responsive" src="assets/images/cody.jpg" alt="Coach Cody Hall"></div>
+      <div class="card">Cody has <b>15+ years</b> of songwriting and <b>10+ years</b> working with kids. He coaches vocals, harmonies, and modern songwriting across pop, country, and hip-hop — with a calm, collaborative approach that builds confidence.</div>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    © <span id="y"></span> SongShackOnTheGo — The Song Shack
-  </footer>
+  <section class="section" id="gallery">
+    <h2>Gallery — The Song Shack</h2>
+    <div class="gallery" id="gal">
+      <img src="assets/images/g1.jpg" alt="Gallery 1">
+      <img src="assets/images/g2.jpg" alt="Gallery 2">
+      <img src="assets/images/g3.jpg" alt="Gallery 3">
+    </div>
+    <div class="lightbox" id="lb" onclick="this.style.display='none'">
+      <img id="lbImg" src="" alt="">
+    </div>
+  </section>
 
-  <script>
+  <section class="section" id="contact">
+    <h2>Contact & Booking</h2>
+    <div class="card">
+      Email: <a href="mailto:missyshack4@gmail.com">missyshack4@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="y"></span> SongShackOnTheGo — The Song Shack</footer>
+<script src="script.js"></script>
+</body>
+</html>:root{
+  --bg:#0a0f1a; --text:#eef2ff; --muted:#aab1c9; --gold:#ffcc66;
+  --card:#121935; --border:#263157; --accent:#a7d363;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.header{position:sticky;top:0;background:rgba(10,15,26,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
+.nav{display:flex;align-items:center;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff}
+.brand img{height:40px;width:auto;border-radius:6px}
+.spacer{flex:1}
+.cta{background:var(--gold);color:#0a0f1a;padding:10px 14px;border-radius:10px;font-weight:700}
+.ghost{background:transparent;border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:10px}
+.hero{position:relative;min-height:60vh;display:grid;place-items:center;background:#000}
+.hero::before{content:"";position:absolute;inset:0;background:url('assets/images/hero.jpg') center/cover no-repeat;filter:brightness(.55)}
+.hero > div{position:relative;text-align:center;padding:40px 16px}
+.hero h1{font-size:clamp(28px,5vw,46px);margin:10px 0 8px}
+.tag{color:var(--gold)}
+.section{padding:72px 0}
+h2{font-size:2rem;margin:0 0 16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+img.responsive{max-width:100%;border-radius:12px;border:1px solid var(--border)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery img{width:100%;height:130px;object-fit:cover;border-radius:10px;border:1px solid var(--border);cursor:pointer}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox img{max-width:92vw;max-height:86vh;border-radius:12px}
+
+.controls{display:grid;gap:10px}
+.controls input,.ai-grid input,.ai-grid select, textarea{width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0c1022;color:var(--text)}
+.canvas-wrap{background:#0c1022;border:1px solid var(--border);border-radius:12px;padding:10px;display:grid;place-items:center}
+
+.muted{color:var(--muted)} .small{font-size:.9rem}
+.ai-grid{display:grid;gap:10px;margin:10px 0}
+.row-buttons{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.song-out{margin-top:12px;border:1px solid var(--border);border-radius:12px;padding:12px;background:#0c1022;white-space:pre-wrap}
+.mini-out{margin-top:8px;padding:10px;border:1px dashed var(--border);border-radius:10px;background:#0b1229;white-space:pre-wrap}
+.row-inline{display:flex;gap:8px;align-items:center}
+.row-inline input{flex:1}
+.tools-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+
+.studio-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.sep{border:none;border-top:1px solid var(--border);margin:14px 0}
+.rec-controls{display:flex;gap:10px;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);text-align:center;margin-top:20px}
+@media(max-width:980px){
+  .grid2{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .studio-grid{grid-template-columns:1fr}
+  .tools-split{grid-template-columns:1fr}
+}// year
 document.getElementById('y').textContent = new Date().getFullYear();
 
-// Lightbox
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightboxImg');
-document.getElementById('gal').addEventListener('click', e=>{
-  if(e.target.tagName==='IMG'){ lbImg.src = e.target.src; lb.style.display='flex'; }
+// lightbox
+const gal = document.getElementById('gal');
+const lb = document.getElementById('lb');
+const lbImg = document.getElementById('lbImg');
+if (gal) {
+  gal.addEventListener('click', e => {
+    if (e.target.tagName === 'IMG') {
+      lbImg.src = e.target.src;
+      lb.style.display = 'flex';
+    }
+  });
+}
+
+/* ============ AI SONG STARTER (rule-based on-device) ============ */
+const el = id => document.getElementById(id);
+const pick = arr => arr[Math.floor(Math.random()*arr.length)];
+
+function genLines(topic, mood, pov, kws){
+  const hookPhrases = [
+    `can't shake this feeling`, `hold on to the light`, `chasing the echo`, `under neon skies`,
+    `we're not done yet`, `right where I belong`, `every mile to you`, `hearts in stereo`
+  ];
+  const vibe = mood ? mood.toLowerCase() : 'honest';
+  const subject = topic || 'this feeling';
+  const povStart = {
+    'I / Me':  `I`,
+    'You / Yours': `You`,
+    'We / Us': `We`,
+    '3rd Person': `They`
+  }[pov] || 'I';
+  const kw = (kws||'').split(',').map(s=>s.trim()).filter(Boolean);
+  const spice = kw.length ? ` (${kw.slice(0,3).join(' • ')})` : '';
+
+  const chorusLine = `And ${povStart.toLowerCase()==='i'?'I':povStart.toLowerCase()} ${pick(['keep on','won’t stop','can’t help but'])} ${pick(['falling for','running to','singing about'])} ${subject}${spice}`;
+  const pre = `If ${pick(['distance','midnight','silence'])} tries to break us, we turn it into sound`;
+  const v1 = [
+    `${povStart} ${pick(['found','carry','keep'])} a little spark in the dark tonight`,
+    `Turning ${subject} into lines and light`,
+    `${pick(['Every word','Every breath','Every step'])} feels ${vibe} and real`
+  ].join('\n');
+  const v2 = [
+    `${pick(['City lights','Backroad signs','Kitchen tiles'])} keep time with our hearts`,
+    `${povStart} scribble truth in the margins and parts`,
+    `We ${pick(['learn to bend','learn to mend','learn to send'])} what we feel into art`
+  ].join('\n');
+  const bridge = pick([
+    `If we ever lose the map, we'll sing it from memory`,
+    `Call it faith, call it gravity — we meet in the melody`,
+    `Even when voices shake, we're stronger in harmony`
+  ]);
+  return {
+    title: (topic ? topic : pick(['Neon Sky','Hold the Light','Every Mile','Stereo Hearts'])),
+    verse1: v1, pre, chorus: `${pick(hookPhrases)}\n${chorusLine}`,
+    verse2: v2, bridge,
+    outro: pick([`Fade on a promise, bright as the dawn`,`Leave the door open, the song carries on`])
+  };
+}
+
+function renderSong(s){
+  return `Title: ${s.title}
+
+[Verse 1]
+${s.verse1}
+
+[Pre-Chorus]
+${s.pre}
+
+[Chorus]
+${s.chorus}
+
+[Verse 2]
+${s.verse2}
+
+[Bridge]
+${s.bridge}
+
+[Outro]
+${s.outro}`;
+}
+
+const genBtn = el('aiGenerate');
+if (genBtn) genBtn.addEventListener('click', ()=>{
+  const s = genLines(el('aiTopic').value, el('aiMood').value, el('aiPOV').value, el('aiKeywords').value);
+  el('songOut').textContent = renderSong(s);
+});
+const copyBtn = el('aiCopyAll');
+if (copyBtn) copyBtn.addEventListener('click', ()=>{
+  const txt = el('songOut').textContent || '';
+  navigator.clipboard.writeText(txt).then(()=>{ copyBtn.textContent='Copied!'; setTimeout(()=>copyBtn.textContent='Copy All',900); });
+});
+const dlBtn = el('aiDownload');
+if (dlBtn) dlBtn.addEventListener('click', ()=>{
+  const blob = new Blob([el('songOut').textContent||''], {type:'text/plain'});
+  const url = URL.createObjectURL(blob);
+  dlBtn.href = url;
 });
 
-// Simple cover art generator
+/* Rhyme Finder (naive ending match + small bank) */
+const rhymeBank = {
+  love:['above','dove','glove','of','shove'],
+  time:['rhyme','climb','prime','sublime','shine'],
+  night:['light','bright','fight','height','alight'],
+  heart:['start','part','art','chart','smart'],
+  you:['true','through','blue','do','view']
+};
+function findRhymes(w){
+  if(!w) return [];
+  const lw = w.toLowerCase();
+  const bank = rhymeBank[lw] || [];
+  // naive ending match
+  const end = lw.slice(-2);
+  const extras = ['view','new','crew','fire','wire','desire','rain','again','home','alone','away','today','real','feel','deal'];
+  return Array.from(new Set([...bank, ...extras.filter(x=>x.endsWith(end))])).slice(0,12);
+}
+const rhymeBtn = el('rhymeBtn');
+if (rhymeBtn) rhymeBtn.addEventListener('click', ()=>{
+  const list = findRhymes(el('rhymeWord').value);
+  el('rhymeOut').textContent = list.length ? list.join(', ') : 'No quick rhymes found — try a simpler ending.';
+});
+
+/* Lyric Polisher (patterned rewrites) */
+const polishBtn = el('polishBtn');
+if (polishBtn) polishBtn.addEventListener('click', ()=>{
+  const line = (el('polishIn').value||'').trim();
+  if(!line){ el('polishOut').textContent='Type a line to polish.'; return; }
+  const options = [
+    line.replace(/\bI\b/g,'I still').replace(/\bwe\b/gi,'we still'),
+    `If ${line.toLowerCase()}, then I’ll rise above it`,
+    `${line} — but I’ll turn it into a chorus`,
+    `Let ${line.toLowerCase()} be the spark that starts the verse`
+  ];
+  el('polishOut').textContent = options.join('\n');
+});
+
+/* Chords & Melody Hints (canned suggestions by vibe) */
+const chordSets = {
+  pop: ['C–G–Am–F','G–D–Em–C','D–A–Bm–G'],
+  'moody r&b': ['Am7–Dm7–G7–Cmaj7','Em7–A7–Dm7–G7','Fmaj7–Gm7–Am7–Em7'],
+  country: ['G–D–Em–C','C–F–G','D–G–A–Bm'],
+  indie: ['Cmaj7–Em–Am7–Fmaj7','D–G–Bm–A','E–B–C#m–A']
+};
+el('chordBtn')?.addEventListener('click', ()=>{
+  const vibe = (el('chordMood').value||'pop').toLowerCase();
+  const key = Object.keys(chordSets).find(k=>vibe.includes(k)) || 'pop';
+  el('chordOut').textContent = chordSets[key].join('   •   ');
+});
+el('melodyBtn')?.addEventListener('click', ()=>{
+  const hints = [
+    'Verse: start low, stepwise up on lines 2–3; Pre: small lift; Chorus: leap up a 3rd or 5th on title word.',
+    'Keep phrases 4–6 notes; save your highest note for the chorus hook.',
+    'Try call-and-response: short question motif in verse, longer answer in chorus.'
+  ];
+  el('melodyOut').textContent = pick(hints);
+});
+
+/* ============ Recording (MediaRecorder) ============ */
+let media, recorder, chunks = [], takeURL = null;
+
+async function startRec(){
+  try{
+    media = await navigator.mediaDevices.getUserMedia({audio:true});
+    recorder = new MediaRecorder(media, {mimeType:'audio/webm'});
+    chunks = [];
+    recorder.ondataavailable = e => e.data.size && chunks.push(e.data);
+    recorder.onstop = ()=>{
+      const blob = new Blob(chunks, {type:'audio/webm'});
+      if (takeURL) URL.revokeObjectURL(takeURL);
+      takeURL = URL.createObjectURL(blob);
+      const audio = el('recAudio');
+      audio.src = takeURL;
+      audio.style.display = 'block';
+      el('recPlay').disabled = false;
+      const dl = el('recDownload');
+      dl.href = takeURL; dl.style.display = 'inline-block';
+    };
+    recorder.start();
+    el('recStart').disabled = true;
+    el('recStop').disabled = false;
+  }catch(err){
+    alert('Mic access failed. On iPhone, open this page in Safari (not in-app browser) and allow microphone.');
+  }
+}
+function stopRec(){
+  if(recorder && recorder.state !== 'inactive') recorder.stop();
+  el('recStart').disabled = false;
+  el('recStop').disabled = true;
+}
+el('recStart')?.addEventListener('click', startRec);
+el('recStop')?.addEventListener('click', stopRec);
+el('recPlay')?.addEventListener('click', ()=> el('recAudio').play() );
+
+/* Simple metronome using AudioContext */
+let ac=null, metroOn=false, metroTimer=null;
+function tick(){
+  const bpm = Math.max(40, Math.min(220, Number(el('bpm').value||90)));
+  if (!ac) ac = new (window.AudioContext||window.webkitAudioContext)();
+  const o = ac.createOscillator();
+  const g = ac.createGain();
+  o.connect(g); g.connect(ac.destination);
+  o.frequency.value = 880; g.gain.value = 0.07;
+  o.start(); o.stop(ac.currentTime + 0.05);
+  metroTimer = setTimeout(tick, 60000/bpm);
+}
+el('metroToggle')?.addEventListener('click', ()=>{
+  if (!metroOn){ metroOn=true; el('metroToggle').textContent='Stop'; tick(); }
+  else { metroOn=false; el('metroToggle').textContent='Start'; clearTimeout(metroTimer); }
+});
+
+/* ============ Cover Art Generator (canvas) ============ */
 const canvas = document.getElementById('coverCanvas');
-const ctx = canvas.getContext('2d');
+const ctx = canvas ? canvas.getContext('2d') : null;
 let bgImg = null;
 
 function renderCover(){
-  // background
-  ctx.fillStyle = '#0a0f1a';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
+  if(!ctx) return;
+  const cw = canvas.width, ch = canvas.height;
+  ctx.fillStyle = '#0a0f1a'; ctx.fillRect(0,0,cw,ch);
   if(bgImg){
-    // cover image with contain & centered crop
-    const cw = canvas.width, ch = canvas.height;
-    const iw = bgImg.width, ih = bgImg.height;
-    const scale = Math.max(cw/iw, ch/ih);
-    const w = iw*scale, h = ih*scale;
+    const s = Math.max(cw/bgImg.width, ch/bgImg.height);
+    const w = bgImg.width*s, h = bgImg.height*s;
     const x = (cw-w)/2, y = (ch-h)/2;
     ctx.drawImage(bgImg, x, y, w, h);
-    // overlay for readability
-    ctx.fillStyle = 'rgba(0,0,0,.35)';
-    ctx.fillRect(0,0,cw,ch);
+    ctx.fillStyle='rgba(0,0,0,.35)'; ctx.fillRect(0,0,cw,ch);
   }
-  // title/artist
-  const title = (document.getElementById('titleInput').value || 'Song Title').toUpperCase();
-  const artist = (document.getElementById('artistInput').value || 'Artist Name');
-  ctx.fillStyle = '#ffcc66';
-  ctx.font = 'bold 64px Inter, Arial, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText(title, canvas.width/2, canvas.height*0.72);
-  ctx.fillStyle = '#eef2ff';
-  ctx.font = '28px Inter, Arial, sans-serif';
-  ctx.fillText(artist, canvas.width/2, canvas.height*0.78);
-
-  // download link
-  const dl = document.getElementById('downloadLink');
-  dl.href = canvas.toDataURL('image/png');
-  dl.style.display = 'inline-block';
+  const title = (el('titleInput').value||'SONG TITLE').toUpperCase();
+  const artist = (el('artistInput').value||'Artist Name');
+  ctx.fillStyle = '#ffcc66'; ctx.font = 'bold 64px Inter, Arial, sans-serif'; ctx.textAlign='center';
+  ctx.fillText(title, cw/2, ch*0.72);
+  ctx.fillStyle = '#eef2ff'; ctx.font = '28px Inter, Arial, sans-serif';
+  ctx.fillText(artist, cw/2, ch*0.78);
+  const dl = el('downloadLink'); dl.href = canvas.toDataURL('image/png'); dl.style.display='inline-block';
 }
-
-document.getElementById('bgUpload').addEventListener('change', e=>{
-  const file = e.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = ev=>{
-    bgImg = new Image();
-    bgImg.onload = renderCover;
-    bgImg.src = ev.target.result;
-  };
-  reader.readAsDataURL(file);
+el('bgUpload')?.addEventListener('change', e=>{
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ev=>{ bgImg = new Image(); bgImg.onload = renderCover; bgImg.src = ev.target.result; };
+  r.readAsDataURL(f);
 });
-document.getElementById('renderBtn').addEventListener('click', renderCover);
-  </script>
-</body>
-</html>
+el('renderBtn')?.addEventListener('click', renderCover);
